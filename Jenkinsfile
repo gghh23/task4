@@ -13,7 +13,7 @@ pipeline {
         stage("connect"){
             steps {
                 script {
-                    sh "scp -i /home/ubuntu/ubuntu.pem dep.yml ubuntu@54.144.68.232:/home/ubuntu"
+                    sh "sudo scp -i /home/ubuntu/ubuntu.pem dep.yml ubuntu@54.144.68.232:/home/ubuntu"
                    
                 }
             }
