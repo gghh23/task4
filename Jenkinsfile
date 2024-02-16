@@ -14,7 +14,7 @@ pipeline {
             steps {
                 script {
                     sh "pwd"
-                    sh "scp -i /home/jenkins/ubuntu.pem dep.yml ubuntu@54.144.68.232:/home/ubuntu"
+                    sh "scp -i /var/lib/jenkins/ubuntu.pem /var/lib/jenkins/workspace/t44/dep.yml ubuntu@54.144.68.232:/home/ubuntu"
                    
                 }
             }
