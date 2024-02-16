@@ -15,7 +15,7 @@ pipeline {
                 script {
 
                     sh "scp -i /var/lib/jenkins/ubuntu.pem /var/lib/jenkins/workspace/t44/dep.yml ubuntu@54.144.68.232:/home/ubuntu"
-                   
+                    sh "ssh  -i /var/lib/jenkins/ubuntu.pem ubuntu@54.144.68.232 kubectl apply -f dep.yml"
                 }
             }
         }
