@@ -1,19 +1,12 @@
 pipeline {
     agent any
-    stages {
-        stage("build"){
-            steps {
-                script {
-                    docker.build("dmitiriy/nginx-rep-task4:latest")
-                }
-            }
-        }
-            
+    stages {            
         stage("push"){
             steps {
                 script {
                     sh "docker login -u dmitriy -p ${dockerpwd}"
-                    docker.image("dmitiriy/nginx-rep-task4:latest").push()
+                    sh "docker build . -t dmitiriy/nginx-rep-task4:latest"
+                    sh "docker tag dmitiriy/nginx-rep-task4:latest dmitiriy/nginx-rep-task4:latest"
                 }
             }
         }
